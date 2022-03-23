@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
             isServiceStarted = true;
 
             Intent intent = new Intent(this, LocationService.class);
-            System.out.println("getApplicationContext().startForegroundService(intent) = " + getApplicationContext().startForegroundService(intent));
+            getApplicationContext().startForegroundService(intent);
         }
     }
 }
