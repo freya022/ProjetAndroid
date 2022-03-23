@@ -22,11 +22,11 @@ public class LocationService extends Service {
     public void onCreate() {
         super.onCreate();
 
-        String channelId = "my_notif_channel_location";
+        String channelId = "Health and Me";
         Notification.Builder builder = new Notification.Builder(this, channelId)
                 .setOngoing(false)
-                .setContentText("Localisation active")
-                .setSmallIcon(R.drawable.ic_launcher_background);
+                .setContentText("Localisation active en arrière plan")
+                .setSmallIcon(R.mipmap.logo);
 
         NotificationManager notificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
