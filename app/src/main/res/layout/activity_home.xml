@@ -73,7 +73,7 @@
         android:layout_marginLeft="80dp"
         android:layout_marginTop="300dp"
         android:backgroundTint="@color/blue70"
-        android:onClick="changerPageStat"
+        android:onClick="onStatsPageClicked"
         android:text="Mes statistiques" />
 
     <Button
@@ -83,7 +83,7 @@
         android:layout_marginLeft="80dp"
         android:layout_marginTop="350dp"
         android:backgroundTint="@color/blue70"
-        android:onClick="changerPageCons"
+        android:onClick="onAdvicesPageClicked"
         android:text="Mes conseils" />
     <Button
         android:id="@+id/button3"
@@ -101,7 +101,7 @@
         android:layout_marginLeft="80dp"
         android:layout_marginTop="460dp"
         android:backgroundTint="@color/blue70"
-        android:onClick="changerPageInfo"
+        android:onClick="onInfoPageClicked"
         android:text="Tous savoir sur nous" />
 
     <TextView

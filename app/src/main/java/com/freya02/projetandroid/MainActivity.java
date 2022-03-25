@@ -17,11 +17,11 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.freya02.projetandroid.other.Helper;
+import com.freya02.projetandroid.other.CreateAccountActivity;
+import com.freya02.projetandroid.other.Database;
 import com.freya02.projetandroid.other.HomeActivity;
 import com.freya02.projetandroid.other.OublierMDP;
 import com.freya02.projetandroid.other.Utilisateur;
-import com.freya02.projetandroid.other.creerCompte;
 
 public class MainActivity extends AppCompatActivity {
     private boolean isServiceStarted = false;
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     public Button connexion;
     public Button creer;
     public Button modifier;
-    Helper h = new Helper(MainActivity.this);
+    Database h = new Database(MainActivity.this);
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -98,7 +98,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void changerPage(){
-        Intent intent = new Intent(MainActivity.this, creerCompte.class);
+        Intent intent = new Intent(MainActivity.this, CreateAccountActivity.class);
         startActivity(intent);
     }
 

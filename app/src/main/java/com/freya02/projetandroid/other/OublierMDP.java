@@ -15,7 +15,7 @@ public class OublierMDP extends AppCompatActivity {
 
     public TextView email;
     public Button boutonEnvoyer;
-    Helper h = new Helper(OublierMDP.this);
+    Database h = new Database(OublierMDP.this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

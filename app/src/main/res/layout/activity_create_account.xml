@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:gravity="center"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".other.CreateAccountActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -116,6 +116,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="125dp"
                 android:backgroundTint="@color/blue70"
+                android:onClick="onCreateClicked"
                 android:text="Créer un compte" />
 
             <Button
@@ -124,6 +125,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="125dp"
                 android:backgroundTint="@color/blue70"
+                android:onClick="onCancelClicked"
                 android:text="Annuler" />
 
         </LinearLayout>

@@ -21,7 +21,7 @@
             android:name=".today_food.TodayFoodActivity"
             android:exported="true" />
         <activity
-            android:name=".other.Conseils"
+            android:name=".other.AdvicesActivity"
             android:exported="false" />
         <activity
             android:name=".other.Statistique"
@@ -36,7 +36,7 @@
             android:name=".other.OublierMDP"
             android:exported="false" />
         <activity
-            android:name=".other.creerCompte"
+            android:name=".other.CreateAccountActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

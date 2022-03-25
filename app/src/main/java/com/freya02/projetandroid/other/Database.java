@@ -8,8 +8,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
-public class Helper extends SQLiteOpenHelper {
-    public Helper(@Nullable Context context) {
+public class Database extends SQLiteOpenHelper {
+    public Database(@Nullable Context context) {
         super(context, "databaseClient", null, 1);
     }
 
@@ -82,6 +82,7 @@ public class Helper extends SQLiteOpenHelper {
 
     public Utilisateur getuserWithoutMDP(String mail){
         SQLiteDatabase db = this.getReadableDatabase();
+
         Cursor c = db.query("Client",new String[]{"_id","nom","prenom","email","mdp","genre","age","poids","taille","locomotion"},"email=?",
                 new String[]{mail},null,null,null);
         if(c.getCount() != 0){

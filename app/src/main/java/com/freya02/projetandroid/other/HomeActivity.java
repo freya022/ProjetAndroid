@@ -22,20 +22,20 @@ public class HomeActivity extends AppCompatActivity {
         prenom.setText(getIntent().getStringExtra("personne_prenom"));
     }
 
-    public void changerPageInfo(View v) {
+    public void onInfoPageClicked(View v) {
         Intent intent = new Intent(this, infoSurNous.class);
 
         startActivity(intent);
     }
 
-    public void changerPageStat(View v) {
+    public void onStatsPageClicked(View v) {
         Intent intent = new Intent(this, Statistique.class);
 
         startActivity(intent);
     }
 
-    public void changerPageCons(View v) {
-        Intent intent = new Intent(this, Conseils.class);
+    public void onAdvicesPageClicked(View v) {
+        Intent intent = new Intent(this, AdvicesActivity.class);
 
         startActivity(intent);
     }
