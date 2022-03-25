@@ -15,7 +15,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetAndroid">
         <activity
-            android:name=".AddFoodActivity"
+            android:name=".today_food.AddFoodActivity"
+            android:exported="true" />
+        <activity
+            android:name=".today_food.TodayFoodActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"

@@ -1,20 +1,18 @@
-package com.freya02.projetandroid;
-
-import androidx.annotation.DrawableRes;
+package com.freya02.projetandroid.today_food;
 
 public class TodayFood {
-    private final int flagId;
+    private final String imagePath;
     private final String foodName;
     private final int foodKcal;
 
-    public TodayFood(@DrawableRes int flagId, String foodName, int foodKcal) {
-        this.flagId = flagId;
+    public TodayFood(String imagePath, String foodName, int foodKcal) {
+        this.imagePath = imagePath;
         this.foodName = foodName;
         this.foodKcal = foodKcal;
     }
 
-    public int getFlagId() {
-        return flagId;
+    public String getImagePath() {
+        return imagePath;
     }
 
     public String getFoodName() {

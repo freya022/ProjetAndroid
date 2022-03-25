@@ -1,6 +1,7 @@
-package com.freya02.projetandroid;
+package com.freya02.projetandroid.today_food;
 
 import android.content.Context;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.freya02.projetandroid.R;
 
 import java.util.List;
 
@@ -46,7 +49,7 @@ public class RecyclerFoodAdapter extends RecyclerView.Adapter<RecyclerFoodAdapte
     public void onBindViewHolder(@NonNull FoodViewHolder holder, int position) {
         TodayFood todayFood = foods.get(position);
 
-        holder.imageFood.setImageResource(todayFood.getFlagId());
+        holder.imageFood.setImageBitmap(BitmapFactory.decodeFile(todayFood.getImagePath()));
         holder.textFoodName.setText(todayFood.getFoodName());
         holder.textKcal.setText(todayFood.getFoodKcal() + "kcal");
     }
