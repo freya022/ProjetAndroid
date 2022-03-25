@@ -54,12 +54,12 @@
 
 
             <EditText
-                android:layout_marginLeft="150dp"
                 android:id="@+id/creerMail"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="150dp"
                 android:hint="Votre email"
-                android:inputType="text" />
+                android:inputType="textEmailAddress" />
 
             <EditText
                 android:id="@+id/creerMotPasse"
@@ -70,29 +70,31 @@
                 android:inputType="textPassword" />
 
             <EditText
-                android:layout_marginLeft="110dp"
                 android:id="@+id/creerAge"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="110dp"
                 android:ems="10"
                 android:hint="Votre âge"
-                android:inputType="text" />
+                android:inputType="number" />
+
             <EditText
-                android:layout_marginLeft="110dp"
                 android:id="@+id/creerPoids"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="110dp"
                 android:ems="10"
                 android:hint="Votre poids"
-                android:inputType="text" />
+                android:inputType="number" />
+
             <EditText
-                android:layout_marginLeft="110dp"
                 android:id="@+id/creerTaille"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginLeft="110dp"
                 android:ems="10"
                 android:hint="Votre taille"
-                android:inputType="text" />
+                android:inputType="number" />
 
             <Spinner
                 android:layout_marginLeft="125dp"

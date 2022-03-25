@@ -6,11 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.freya02.projetandroid.R;
 
-public class infoSurNous extends AppCompatActivity {
-
+public class StatisticsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_info_sur_nous);
+        setContentView(R.layout.activity_statistics);
     }
 }

@@ -3,7 +3,6 @@ package com.freya02.projetandroid.other;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -11,33 +10,25 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.freya02.projetandroid.R;
 
-public class OublierMDP extends AppCompatActivity {
+public class ResetPasswordActivity extends AppCompatActivity {
+    private TextView email;
 
-    public TextView email;
-    public Button boutonEnvoyer;
-    Database h = new Database(OublierMDP.this);
+    private final Database h = new Database(ResetPasswordActivity.this);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_oublier_mdp);
+        setContentView(R.layout.activity_reset_password);
 
-        email = findViewById(R.id.email);
-        boutonEnvoyer = findViewById(R.id.envoyer);
-
-        boutonEnvoyer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                envoyerMail();
-            }
-        });
+        this.email = findViewById(R.id.email);
     }
 
-    public void envoyerMail(){
-        String envoyerA = email.getText().toString(); /* On utilise le mail pour l'envoie */
+    public void envoyerMail(View v) {
+        String envoyerA = email.getText().toString();/* On utilise le mail pour l'envoie */
+
         Utilisateur existe = h.getuserWithoutMDP(envoyerA);
-        if(existe==null){
-            Toast.makeText(OublierMDP.this, "Il n'ya pas de compte pour cette adresse.", Toast.LENGTH_LONG).show();
+        if (existe == null) {
+            Toast.makeText(ResetPasswordActivity.this, "Il n'ya pas de compte pour cette adresse.", Toast.LENGTH_LONG).show();
         } else {
             Intent intent = new Intent(Intent.ACTION_SEND);  /* On crée un nouveau Intent */
             intent.putExtra(Intent.EXTRA_EMAIL, envoyerA); /* On envoie les données */

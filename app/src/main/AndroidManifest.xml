@@ -24,16 +24,16 @@
             android:name=".other.AdvicesActivity"
             android:exported="false" />
         <activity
-            android:name=".other.Statistique"
+            android:name=".other.StatisticsActivity"
             android:exported="false" />
         <activity
-            android:name=".other.infoSurNous"
+            android:name=".other.InfoActivity"
             android:exported="false" />
         <activity
             android:name=".other.HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".other.OublierMDP"
+            android:name=".other.ResetPasswordActivity"
             android:exported="false" />
         <activity
             android:name=".other.CreateAccountActivity"

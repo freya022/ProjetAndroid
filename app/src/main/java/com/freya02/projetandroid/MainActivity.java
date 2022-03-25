@@ -20,7 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.freya02.projetandroid.other.CreateAccountActivity;
 import com.freya02.projetandroid.other.Database;
 import com.freya02.projetandroid.other.HomeActivity;
-import com.freya02.projetandroid.other.OublierMDP;
+import com.freya02.projetandroid.other.ResetPasswordActivity;
 import com.freya02.projetandroid.other.Utilisateur;
 
 public class MainActivity extends AppCompatActivity {
@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void pageModifier(){
-        Intent intent = new Intent(MainActivity.this, OublierMDP.class);
+        Intent intent = new Intent(MainActivity.this, ResetPasswordActivity.class);
         startActivity(intent);
     }
 

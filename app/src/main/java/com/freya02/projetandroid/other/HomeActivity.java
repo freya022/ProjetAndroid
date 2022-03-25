@@ -23,13 +23,13 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     public void onInfoPageClicked(View v) {
-        Intent intent = new Intent(this, infoSurNous.class);
+        Intent intent = new Intent(this, InfoActivity.class);
 
         startActivity(intent);
     }
 
     public void onStatsPageClicked(View v) {
-        Intent intent = new Intent(this, Statistique.class);
+        Intent intent = new Intent(this, StatisticsActivity.class);
 
         startActivity(intent);
     }
