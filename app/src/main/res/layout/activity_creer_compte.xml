@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="324dp"
+                android:layout_height="57dp"
+                android:layout_marginLeft="80dp"
+                android:text="CREATION DU COMPTE"
+                android:textColor="@color/black"
+                android:textSize="25dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="138dp"
+                android:layout_height="131dp"
+                android:layout_marginLeft="150dp"
+                app:srcCompat="@drawable/logo" />
+
+            <EditText
+                android:id="@+id/creerNom"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="150dp"
+                android:hint="Votre nom"
+                android:inputType="text" />
+
+            <EditText
+                android:layout_toRightOf="@id/creerNom"
+                android:id="@+id/creerPrenom"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="150dp"
+                android:hint="Votre prénom"
+                android:inputType="text" />
+
+
+            <EditText
+                android:layout_marginLeft="150dp"
+                android:id="@+id/creerMail"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:hint="Votre email"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/creerMotPasse"
+                android:layout_width="210dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="110dp"
+                android:hint="Votre mot de passe"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:layout_marginLeft="110dp"
+                android:id="@+id/creerAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Votre âge"
+                android:inputType="text" />
+            <EditText
+                android:layout_marginLeft="110dp"
+                android:id="@+id/creerPoids"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Votre poids"
+                android:inputType="text" />
+            <EditText
+                android:layout_marginLeft="110dp"
+                android:id="@+id/creerTaille"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Votre taille"
+                android:inputType="text" />
+
+            <Spinner
+                android:layout_marginLeft="125dp"
+                android:layout_marginRight="125dp"
+                android:id="@+id/spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/genre"/>
+
+            <Spinner
+                android:layout_marginLeft="125dp"
+                android:layout_marginRight="125dp"
+                android:id="@+id/spinnerLoco"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:entries="@array/locomotion"/>
+
+            <Button
+                android:id="@+id/creerCompte"
+                android:layout_width="176dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="125dp"
+                android:backgroundTint="@color/blue70"
+                android:text="Créer un compte" />
+
+            <Button
+                android:id="@+id/annuler"
+                android:layout_width="176dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="125dp"
+                android:backgroundTint="@color/blue70"
+                android:text="Annuler" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

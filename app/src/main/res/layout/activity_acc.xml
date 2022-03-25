@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".other.Acc">
+
+    <TextView
+        android:id="@+id/nom2"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="25dp"
+        android:layout_width="122dp"
+        android:layout_height="22dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="100dp"
+        tools:layout_editor_absoluteY="26dp" />
+
+    <TextView
+        android:id="@+id/prenom2"
+        android:layout_marginLeft="75dp"
+        android:layout_marginTop="50dp"
+        android:layout_width="123dp"
+        android:layout_height="26dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="99dp"
+        tools:layout_editor_absoluteY="52dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="100dp"
+        android:text="Bienvenue sur ton espace santé"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="160dp"
+        android:text="Chemin parcouru aujourd'hui"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="16dp" />
+
+    <ImageView
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:id="@+id/imageView4"
+        android:layout_width="56dp"
+        android:layout_height="84dp"
+        app:srcCompat="@drawable/_68px_circle_icons_profile_svg" />
+
+    <Button
+        android:id="@+id/button"
+        android:backgroundTint="@color/blue70"
+        android:layout_width="242dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="250dp"
+        android:text="Mes repas du jour" />
+
+    <Button
+        android:id="@+id/statistiques"
+        android:layout_width="245dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="300dp"
+        android:backgroundTint="@color/blue70"
+        android:text="Mes statistiques" />
+
+    <Button
+        android:id="@+id/conseil"
+        android:layout_width="245dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="350dp"
+        android:backgroundTint="@color/blue70"
+        android:text="Mes conseils" />
+    <Button
+        android:id="@+id/button3"
+        android:backgroundTint="@color/blue70"
+        android:layout_width="245dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="400dp"
+        android:text="Mes données personnelles" />
+
+    <Button
+        android:id="@+id/infoSurNous"
+        android:backgroundTint="@color/blue70"
+        android:layout_width="245dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="80dp"
+        android:layout_marginTop="460dp"
+        android:text="Tous savoir sur nous" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="175dp"
+        android:layout_marginTop="180dp"
+        android:text="0.9 km"
+        android:textColor="@color/blue70"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_marginLeft="100dp"
+        android:id="@+id/imageView7"
+        android:layout_width="198dp"
+        android:layout_height="245dp"
+        android:layout_marginTop="500dp"
+        app:srcCompat="@drawable/logo" />
+
+
+</RelativeLayout>

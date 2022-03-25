@@ -21,6 +21,24 @@
             android:name=".today_food.TodayFoodActivity"
             android:exported="true" />
         <activity
+            android:name=".other.Conseils"
+            android:exported="false" />
+        <activity
+            android:name=".other.Statistique"
+            android:exported="false" />
+        <activity
+            android:name=".other.infoSurNous"
+            android:exported="false" />
+        <activity
+            android:name=".other.Acc"
+            android:exported="false" />
+        <activity
+            android:name=".other.OublierMDP"
+            android:exported="false" />
+        <activity
+            android:name=".other.creerCompte"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

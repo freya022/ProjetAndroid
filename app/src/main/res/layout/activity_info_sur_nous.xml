@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".infoSurNous">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:text="Quelques informations sur nous."
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:layout_marginLeft="310dp"
+        android:id="@+id/imageView3"
+        android:layout_width="99dp"
+        android:layout_height="110dp"
+        app:srcCompat="@drawable/logo" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="125dp"
+        android:text="Nous sommes des étudiants en DUT Informatique de deuxième année. Nous avons un projet android, ici c'était de créer une application de santé avec une gestion de compte et de la santé de l'utilisateur."
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="116dp"
+        android:layout_height="217dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="370dp"
+        app:srcCompat="@drawable/screenshot_20210313_164633_com_snapchat_android" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="370dp"
+        android:text="Louis Tournay"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="300dp"
+        android:layout_marginTop="370dp"
+        android:text="Léo Sevin"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="540dp"
+        android:text="Alexandre Leduc"
+        android:layout_marginLeft="30dp"
+        android:textStyle="italic" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="280dp"
+        android:layout_marginTop="550dp"
+        android:text="Lylian Havet"
+        android:textStyle="italic" />
+
+    <ImageView
+        android:layout_marginLeft="240dp"
+        android:layout_marginTop="230dp"
+        android:id="@+id/imageView9"
+        android:layout_width="186dp"
+        android:layout_height="138dp"
+        app:srcCompat="@drawable/l_o" />
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="121dp"
+        android:layout_height="139dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="230dp"
+        app:srcCompat="@drawable/louis" />
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="133dp"
+        android:layout_height="134dp"
+        android:layout_marginLeft="250dp"
+        android:layout_marginTop="415dp"
+        app:srcCompat="@drawable/img_4140" />
+
+
+</RelativeLayout>

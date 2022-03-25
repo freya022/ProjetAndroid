@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Conseils">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="140dp"
+        android:text="Mes statistiques"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="278dp"
+        android:layout_marginTop="50dp"
+        android:text="Te voici dans la page des conseils ! \n \n
+L'Organisation Mondiale de la Santé recommande de marcher 7.5 kilomètres par jour pour garder la forme !\n
+C'est pour cela que dans mes statistiques tu peux retrouver ta progression d'aujourd'hui.\n
+En marchant 7,5 kilomètres en une journée ton corps va pouvoir éliminer un maximum de calories.\n \n
+Il faut aussi que tu serveilles ton alimentation !\n
+Tu peux te faire plaisir avec un fast-food par exemple mais pas trop souvent !\
+Nous te conseillons au maximum un repas plaisir par semaine et pas plus !\n \n
+L'application Health And Me va t'aider au quotidien pour surveiller ton alimentation et ton activité physique !"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="410dp"
+        app:srcCompat="@drawable/vert_collines_fond_realiste_champ_paysage_88088_862" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="249dp"
+        android:layout_height="225dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="450dp"
+        app:srcCompat="@drawable/fliped_image_coureur" />
+
+
+</RelativeLayout>
