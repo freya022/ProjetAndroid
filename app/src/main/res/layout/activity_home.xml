@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".other.Acc">
+    tools:context=".other.HomeActivity">
 
     <TextView
         android:id="@+id/nom2"
@@ -73,6 +73,7 @@
         android:layout_marginLeft="80dp"
         android:layout_marginTop="300dp"
         android:backgroundTint="@color/blue70"
+        android:onClick="changerPageStat"
         android:text="Mes statistiques" />
 
     <Button
@@ -82,6 +83,7 @@
         android:layout_marginLeft="80dp"
         android:layout_marginTop="350dp"
         android:backgroundTint="@color/blue70"
+        android:onClick="changerPageCons"
         android:text="Mes conseils" />
     <Button
         android:id="@+id/button3"
@@ -94,11 +96,12 @@
 
     <Button
         android:id="@+id/infoSurNous"
-        android:backgroundTint="@color/blue70"
         android:layout_width="245dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="460dp"
+        android:backgroundTint="@color/blue70"
+        android:onClick="changerPageInfo"
         android:text="Tous savoir sur nous" />
 
     <TextView

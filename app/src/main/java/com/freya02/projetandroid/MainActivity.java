@@ -17,8 +17,8 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.freya02.projetandroid.other.Acc;
 import com.freya02.projetandroid.other.Helper;
+import com.freya02.projetandroid.other.HomeActivity;
 import com.freya02.projetandroid.other.OublierMDP;
 import com.freya02.projetandroid.other.Utilisateur;
 import com.freya02.projetandroid.other.creerCompte;
@@ -87,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Utilisateur user = h.getOneWithMail(mail_,mdp_);
             if(user!=null){
-                Intent intent = new Intent(MainActivity.this, Acc.class);
+                Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                 intent.putExtra("personne_nom", user.getNom());
                 intent.putExtra("personne_prenom", user.getPrenom());
                 startActivity(intent);

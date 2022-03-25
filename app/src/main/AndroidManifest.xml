@@ -30,7 +30,7 @@
             android:name=".other.infoSurNous"
             android:exported="false" />
         <activity
-            android:name=".other.Acc"
+            android:name=".other.HomeActivity"
             android:exported="false" />
         <activity
             android:name=".other.OublierMDP"
