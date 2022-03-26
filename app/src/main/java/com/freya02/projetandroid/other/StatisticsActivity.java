@@ -3,6 +3,7 @@ package com.freya02.projetandroid.other;
 import android.os.Bundle;
 import android.widget.ProgressBar;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.freya02.projetandroid.DistanceDatabase;
@@ -14,6 +15,10 @@ public class StatisticsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistics);
+
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowHomeEnabled(true);
+        actionBar.setIcon(R.mipmap.logo);
 
         //En kilomètres
         double todayDistance = new DistanceDatabase(this).getTodayDistance();
