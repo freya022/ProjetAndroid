@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.freya02.projetandroid">
+    package="com.freya02.projetandroid.activity">
 
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -15,28 +15,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetAndroid">
         <activity
-            android:name=".today_food.AddFoodActivity"
+            android:name=".AddFoodActivity"
             android:exported="true" />
         <activity
-            android:name=".today_food.TodayFoodActivity"
+            android:name=".TodayFoodActivity"
             android:exported="true" />
         <activity
-            android:name=".other.AdvicesActivity"
+            android:name=".AdvicesActivity"
             android:exported="false" />
         <activity
-            android:name=".other.StatisticsActivity"
+            android:name=".StatisticsActivity"
             android:exported="false" />
         <activity
-            android:name=".other.InfoActivity"
+            android:name=".InfoActivity"
             android:exported="false" />
         <activity
-            android:name=".other.HomeActivity"
+            android:name=".HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".other.ResetPasswordActivity"
+            android:name=".ResetPasswordActivity"
             android:exported="false" />
         <activity
-            android:name=".other.CreateAccountActivity"
+            android:name=".CreateAccountActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

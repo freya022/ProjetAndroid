@@ -1,4 +1,4 @@
-package com.freya02.projetandroid.other;
+package com.freya02.projetandroid.activity;
 
 import android.os.Bundle;
 import android.view.View;
@@ -6,12 +6,10 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
+import com.freya02.projetandroid.other.Database;
+import com.freya02.projetandroid.other.Utilisateur;
 
-import com.freya02.projetandroid.R;
-
-public class CreateAccountActivity extends AppCompatActivity {
+public class CreateAccountActivity extends BaseActivity {
     private EditText prenom;
     private EditText name;
     private EditText mail;
@@ -28,10 +26,6 @@ public class CreateAccountActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
-
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setIcon(R.mipmap.logo);
 
         this.prenom = findViewById(R.id.creerPrenom);
         this.name = findViewById(R.id.creerNom);

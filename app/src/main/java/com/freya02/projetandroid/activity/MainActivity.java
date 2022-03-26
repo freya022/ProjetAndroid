@@ -1,4 +1,4 @@
-package com.freya02.projetandroid;
+package com.freya02.projetandroid.activity;
 
 import static android.Manifest.permission.ACCESS_BACKGROUND_LOCATION;
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
@@ -13,16 +13,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
 
-import com.freya02.projetandroid.other.CreateAccountActivity;
+import com.freya02.projetandroid.LocationService;
+import com.freya02.projetandroid.PermissionUtils;
 import com.freya02.projetandroid.other.Database;
-import com.freya02.projetandroid.other.HomeActivity;
-import com.freya02.projetandroid.other.ResetPasswordActivity;
 import com.freya02.projetandroid.other.Utilisateur;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends BaseActivity {
     private final Database h = new Database(MainActivity.this);
 
     private boolean isServiceStarted = false;
@@ -41,10 +38,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setIcon(R.mipmap.logo);
 
         PermissionUtils.checkPermission(this, this::tryStartService, () -> {
             Toast.makeText(this, "Requiert les permissions demandées", Toast.LENGTH_SHORT).show();

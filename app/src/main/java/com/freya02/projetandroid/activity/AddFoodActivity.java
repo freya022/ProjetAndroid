@@ -1,4 +1,4 @@
-package com.freya02.projetandroid.today_food;
+package com.freya02.projetandroid.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -14,10 +14,6 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContract;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.freya02.projetandroid.R;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -26,20 +22,16 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
 
-public class AddFoodActivity extends AppCompatActivity {
+public class AddFoodActivity extends BaseActivity {
     private ActivityResultLauncher<Void> launcher;
 
-    private Intent resultIntent = new Intent();
+    private final Intent resultIntent = new Intent();
     private Bitmap bitmap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_food);
-
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setIcon(R.mipmap.logo);
 
         launcher = registerForActivityResult(new ActivityResultContract<Void, Bitmap>() {
             @NonNull

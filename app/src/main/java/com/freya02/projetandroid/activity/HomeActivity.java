@@ -1,25 +1,15 @@
-package com.freya02.projetandroid.other;
+package com.freya02.projetandroid.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
-import com.freya02.projetandroid.R;
-import com.freya02.projetandroid.today_food.TodayFoodActivity;
-
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setIcon(R.mipmap.logo);
 
         final TextView name = findViewById(R.id.nom2);
         final TextView prenom = findViewById(R.id.prenom2);

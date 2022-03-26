@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.freya02.projetandroid.R;
+import com.freya02.projetandroid.activity.R;
 
 import java.util.List;
 

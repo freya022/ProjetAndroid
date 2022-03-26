@@ -9,6 +9,8 @@ import android.os.IBinder;
 
 import androidx.annotation.Nullable;
 
+import com.freya02.projetandroid.activity.R;
+
 public class LocationService extends Service {
     private boolean isServiceStarted = false;
 

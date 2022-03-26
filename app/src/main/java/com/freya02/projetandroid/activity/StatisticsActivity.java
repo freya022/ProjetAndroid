@@ -1,24 +1,16 @@
-package com.freya02.projetandroid.other;
+package com.freya02.projetandroid.activity;
 
 import android.os.Bundle;
 import android.widget.ProgressBar;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.freya02.projetandroid.DistanceDatabase;
-import com.freya02.projetandroid.R;
 import com.freya02.projetandroid.today_food.DatabaseFood;
 
-public class StatisticsActivity extends AppCompatActivity {
+public class StatisticsActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistics);
-
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setIcon(R.mipmap.logo);
 
         //En kilomètres
         double todayDistance = new DistanceDatabase(this).getTodayDistance();

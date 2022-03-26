@@ -1,4 +1,4 @@
-package com.freya02.projetandroid.today_food;
+package com.freya02.projetandroid.activity;
 
 import android.content.Context;
 import android.content.Intent;
@@ -9,17 +9,17 @@ import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContract;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.freya02.projetandroid.R;
+import com.freya02.projetandroid.today_food.DatabaseFood;
+import com.freya02.projetandroid.today_food.RecyclerFoodAdapter;
+import com.freya02.projetandroid.today_food.TodayFood;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class TodayFoodActivity extends AppCompatActivity {
+public class TodayFoodActivity extends BaseActivity {
     private final DatabaseFood h = new DatabaseFood(TodayFoodActivity.this);
 
     private final List<TodayFood> todayFoods = new ArrayList<>();
@@ -58,10 +58,6 @@ public class TodayFoodActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_today_food);
-
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setIcon(R.mipmap.logo);
 
         RecyclerView view = findViewById(R.id.todayFoodRecycler);
 

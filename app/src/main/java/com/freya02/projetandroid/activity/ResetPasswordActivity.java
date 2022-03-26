@@ -1,4 +1,4 @@
-package com.freya02.projetandroid.other;
+package com.freya02.projetandroid.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,12 +6,10 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AppCompatActivity;
+import com.freya02.projetandroid.other.Database;
+import com.freya02.projetandroid.other.Utilisateur;
 
-import com.freya02.projetandroid.R;
-
-public class ResetPasswordActivity extends AppCompatActivity {
+public class ResetPasswordActivity extends BaseActivity {
     private TextView email;
 
     private final Database h = new Database(ResetPasswordActivity.this);
@@ -20,10 +18,6 @@ public class ResetPasswordActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reset_password);
-
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayShowHomeEnabled(true);
-        actionBar.setIcon(R.mipmap.logo);
 
         this.email = findViewById(R.id.email);
     }
