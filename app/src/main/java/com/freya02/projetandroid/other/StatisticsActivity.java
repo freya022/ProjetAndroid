@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.freya02.projetandroid.DistanceDatabase;
 import com.freya02.projetandroid.R;
+import com.freya02.projetandroid.today_food.DatabaseFood;
 
 public class StatisticsActivity extends AppCompatActivity {
     @Override
@@ -17,7 +18,10 @@ public class StatisticsActivity extends AppCompatActivity {
         //En kilomètres
         double todayDistance = new DistanceDatabase(this).getTodayDistance();
         ProgressBar todayKmBar = findViewById(R.id.todayKmBar);
-
         todayKmBar.setProgress((int) (todayDistance * 1000.0));
+
+        int todayKcal = new DatabaseFood(this).getTodayKcal();
+        ProgressBar todayKcalBar = findViewById(R.id.todayKcalBar);
+        todayKcalBar.setProgress(todayKcal);
     }
 }

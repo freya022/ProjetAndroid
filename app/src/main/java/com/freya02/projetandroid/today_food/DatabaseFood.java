@@ -74,6 +74,18 @@ public class DatabaseFood extends SQLiteOpenHelper {
         }
     }
 
+    public int getTodayKcal() {
+        try (SQLiteDatabase db = this.getReadableDatabase();
+             Cursor c = db.rawQuery("SELECT sum(kcal) FROM Food", null)) {
+
+            if (c.moveToFirst()) {
+                return c.getInt(0);
+            }
+
+            return 0;
+        }
+    }
+
     public TodayFood getOne(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor c = db.query("Food", new String[]{"_id", "photo", "nom", "kcal"}, "_id=?",
