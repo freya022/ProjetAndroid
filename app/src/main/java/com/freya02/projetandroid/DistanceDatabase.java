@@ -1,5 +1,6 @@
 package com.freya02.projetandroid;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -33,17 +34,25 @@ public class DistanceDatabase extends SQLiteOpenHelper {
     }
 
     public void addDistance(double oldLat, double latitude, double oldLong, double longitude) {
-        SQLiteDatabase db = getWritableDatabase();
+        try (SQLiteDatabase db = getWritableDatabase()) {
+            if (oldLat == -1 || oldLong == -1) return;
 
-        if (oldLat == -1 || oldLong == -1) return;
+            //Km
+            double distance = distance(oldLat, latitude, oldLong, longitude);
 
-        double distance = distance(oldLat, latitude, oldLong, longitude);
+            ContentValues data = new ContentValues();
+            data.put("distance", distance);
 
-        Cursor cursor = db.rawQuery("insert into Distance (distance) values (?)", new String[]{
-                String.valueOf(distance)
-        });
+            db.insertOrThrow("Distance", null, data);
+        }
+    }
 
-        cursor.close();
+    public double getTodayDistance() {
+        try (SQLiteDatabase db = getWritableDatabase(); Cursor cursor = db.rawQuery("select sum(distance) from Distance where date(date) = current_date", new String[0])) {
+            cursor.moveToFirst();
+
+            return cursor.getDouble(0);
+        }
     }
 
     @Override

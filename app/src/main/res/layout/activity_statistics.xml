@@ -33,7 +33,7 @@
         android:layout_marginTop="50dp"/>
 
     <ProgressBar
-        android:id="@+id/progressBar"
+        android:id="@+id/todayKmBar"
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="407dp"
         android:layout_height="100dp"
