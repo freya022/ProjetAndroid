@@ -1,6 +1,5 @@
 package com.freya02.projetandroid.activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -11,9 +10,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 
 import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContract;
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
+
+import com.freya02.projetandroid.Utils;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -33,30 +31,24 @@ public class AddFoodActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_food);
 
-        launcher = registerForActivityResult(new ActivityResultContract<Void, Bitmap>() {
-            @NonNull
-            @Override
-            public Intent createIntent(@NonNull Context context, Void input) {
-                return new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            }
+        launcher = Utils.registerForActivityResult(this,
+                (context, input) -> new Intent(MediaStore.ACTION_IMAGE_CAPTURE),
+                (resultCode, intent) -> {
+                    if (resultCode == RESULT_OK && intent != null) {
+                        return (Bitmap) intent.getExtras().get("data");
+                    }
 
-            @Override
-            public Bitmap parseResult(int resultCode, @Nullable Intent intent) {
-                if (resultCode == RESULT_OK && intent != null) {
-                    return (Bitmap) intent.getExtras().get("data");
-                }
+                    return null;
+                },
+                bitmap -> {
+                    if (bitmap != null) {
+                        ImageView foodPreview = findViewById(R.id.foodPreview);
 
-                return null;
-            }
-        }, bitmap -> {
-            if (bitmap != null) {
-                ImageView foodPreview = findViewById(R.id.foodPreview);
+                        foodPreview.setImageBitmap(bitmap);
 
-                foodPreview.setImageBitmap(bitmap);
-
-                this.bitmap = bitmap;
-            }
-        });
+                        this.bitmap = bitmap;
+                    }
+                });
     }
 
     public void onAddPhotoClick(View v) {

@@ -1,6 +1,7 @@
 package com.freya02.projetandroid.activity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -33,9 +34,15 @@ public class LoginActivity extends BaseActivity {
             Utilisateur user = h.getOneWithMail(mail_, mdp_);
             if (user != null) {
                 Intent intent = new Intent(this, MainActivity.class);
-                intent.putExtra("personne_nom", user.getNom());
-                intent.putExtra("personne_prenom", user.getPrenom());
+                SharedPreferences.Editor editor = getSharedPreferences("app", MODE_PRIVATE).edit();
+                editor.putString("email", mail_);
+                editor.putString("mdp", mdp_);
+
+                editor.apply();
+
                 startActivity(intent);
+
+                finish();
             } else {
                 Toast.makeText(this, "Connexion impossible.", Toast.LENGTH_LONG).show();
             }

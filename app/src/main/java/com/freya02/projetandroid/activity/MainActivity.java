@@ -7,6 +7,7 @@ import static android.Manifest.permission.CAMERA;
 import static android.Manifest.permission.FOREGROUND_SERVICE;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -16,8 +17,12 @@ import androidx.annotation.NonNull;
 
 import com.freya02.projetandroid.LocationService;
 import com.freya02.projetandroid.PermissionUtils;
+import com.freya02.projetandroid.other.Database;
+import com.freya02.projetandroid.other.Utilisateur;
 
 public class MainActivity extends BaseActivity {
+    private final Database database = new Database(this);
+
     private boolean isServiceStarted = false;
 
     @Override
@@ -30,9 +35,25 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
 
         PermissionUtils.checkPermission(this, () -> {
+            SharedPreferences preferences = getSharedPreferences("app", MODE_PRIVATE);
+
+            String email = preferences.getString("email", "");
+            String mdp = preferences.getString("mdp", "");
+            Utilisateur utilisateur = database.getOneWithMail(email, mdp);
+
+            if (utilisateur == null) {
+                Intent intent = new Intent(this, LoginActivity.class);
+                startActivity(intent);
+
+                finish();
+
+                return;
+            }
+
+            setContentView(R.layout.activity_home);
+
             final TextView name = findViewById(R.id.nom2);
             final TextView prenom = findViewById(R.id.prenom2);
 
