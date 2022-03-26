@@ -8,6 +8,9 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class DatabaseFood extends SQLiteOpenHelper {
     public DatabaseFood(@Nullable Context context) {
         super(context, "databaseFood", null, 1);
@@ -55,16 +58,25 @@ public class DatabaseFood extends SQLiteOpenHelper {
         db.close();
     }
 
-    public Cursor getAll() {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = db.rawQuery("SELECT * FROM Food", null);
-        //System.out.println("" + c.getString(1).toString());
-        return c;
+    public List<TodayFood> getAll() {
+        try (SQLiteDatabase db = this.getReadableDatabase();
+             Cursor c = db.rawQuery("SELECT * FROM Food", null)) {
+
+            List<TodayFood> todayFoods = new ArrayList<>();
+
+            if (c.moveToFirst()) {
+                do {
+                    todayFoods.add(new TodayFood(c.getString(1), c.getString(2), c.getInt(3)));
+                } while (c.moveToNext());
+            }
+
+            return todayFoods;
+        }
     }
 
     public TodayFood getOne(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = db.query("Food", new String[]{"_id", "photo","nom", "kcal" }, "_id=?",
+        Cursor c = db.query("Food", new String[]{"_id", "photo", "nom", "kcal"}, "_id=?",
                 new String[]{String.valueOf(id)}, null, null, null);
         c.moveToFirst();
         TodayFood u = new TodayFood(c.getInt(0), c.getString(1), c.getString(2), c.getInt(3));
@@ -74,7 +86,7 @@ public class DatabaseFood extends SQLiteOpenHelper {
 
     public TodayFood getOneWithName(String nom) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = db.query("Food", new String[]{"_id",  "photo","nom", "kcal"}, "nom=?",
+        Cursor c = db.query("Food", new String[]{"_id", "photo", "nom", "kcal"}, "nom=?",
                 new String[]{nom}, null, null, null);
         if (c.getCount() != 0) {
             c.moveToFirst();

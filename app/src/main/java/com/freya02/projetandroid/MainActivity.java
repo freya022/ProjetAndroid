@@ -9,7 +9,6 @@ import static android.Manifest.permission.FOREGROUND_SERVICE;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,14 +23,12 @@ import com.freya02.projetandroid.other.ResetPasswordActivity;
 import com.freya02.projetandroid.other.Utilisateur;
 
 public class MainActivity extends AppCompatActivity {
+    private final Database h = new Database(MainActivity.this);
+
     private boolean isServiceStarted = false;
 
-    public TextView email;
-    public TextView motDePasse;
-    public Button connexion;
-    public Button creer;
-    public Button modifier;
-    Database h = new Database(MainActivity.this);
+    private TextView email;
+    private TextView motDePasse;
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
@@ -55,54 +52,34 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }, FOREGROUND_SERVICE, ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION, ACCESS_BACKGROUND_LOCATION, CAMERA);
 
-        this.motDePasse = (TextView) findViewById(R.id.motDePasse);
-        this.email = (TextView) findViewById(R.id.email);
-        this.modifier = (Button) findViewById(R.id.modifierMDP);
-        this.connexion = (Button) findViewById(R.id.connexion);
-        this.creer = (Button) findViewById(R.id.creer);
-
-        this.connexion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) { connexionCompte(email); }
-        });
-        this.creer.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                changerPage();
-            }
-        });
-        this.modifier.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                pageModifier();
-            }
-        });
+        this.motDePasse = findViewById(R.id.motDePasse);
+        this.email = findViewById(R.id.email);
     }
 
-    private void connexionCompte(TextView mail) {
+    public void connexionCompte(View view) {
         String mail_ = email.getText().toString();
         String mdp_ = motDePasse.getText().toString();
-        if(mail_.isEmpty() || mdp_.isEmpty()){
+        if (mail_.isEmpty() || mdp_.isEmpty()) {
             Toast.makeText(MainActivity.this, "Veuillez remplir les zones de saisies.", Toast.LENGTH_LONG).show();
         } else {
-            Utilisateur user = h.getOneWithMail(mail_,mdp_);
-            if(user!=null){
+            Utilisateur user = h.getOneWithMail(mail_, mdp_);
+            if (user != null) {
                 Intent intent = new Intent(MainActivity.this, HomeActivity.class);
                 intent.putExtra("personne_nom", user.getNom());
                 intent.putExtra("personne_prenom", user.getPrenom());
                 startActivity(intent);
-            }else{
+            } else {
                 Toast.makeText(MainActivity.this, "Connexion impossible.", Toast.LENGTH_LONG).show();
             }
         }
     }
 
-    private void changerPage(){
+    public void changerPage(View view) {
         Intent intent = new Intent(MainActivity.this, CreateAccountActivity.class);
         startActivity(intent);
     }
 
-    private void pageModifier(){
+    public void pageModifier(View view) {
         Intent intent = new Intent(MainActivity.this, ResetPasswordActivity.class);
         startActivity(intent);
     }
