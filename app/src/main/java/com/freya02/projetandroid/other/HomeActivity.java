@@ -8,6 +8,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.freya02.projetandroid.R;
+import com.freya02.projetandroid.today_food.TodayFoodActivity;
 
 public class HomeActivity extends AppCompatActivity {
     @Override
@@ -20,6 +21,12 @@ public class HomeActivity extends AppCompatActivity {
 
         name.setText(getIntent().getStringExtra("personne_nom"));
         prenom.setText(getIntent().getStringExtra("personne_prenom"));
+    }
+
+    public void onTodayFoodClicked(View v) {
+        Intent intent = new Intent(this, TodayFoodActivity.class);
+
+        startActivity(intent);
     }
 
     public void onInfoPageClicked(View v) {

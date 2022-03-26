@@ -21,6 +21,9 @@ import java.util.Arrays;
 import java.util.List;
 
 public class TodayFoodActivity extends AppCompatActivity {
+
+    private final DatabaseFood h = new DatabaseFood(TodayFoodActivity.this);
+
     private static class Holder {
         private final String name;
         private final int kcal;
@@ -75,8 +78,10 @@ public class TodayFoodActivity extends AppCompatActivity {
             }
         }, holder -> {
             if (holder != null) {
-                todayFoods.add(new TodayFood(holder.imagePath, holder.name, holder.kcal));
-
+                TodayFood todayFood = new TodayFood(holder.imagePath, holder.name, holder.kcal);
+                todayFoods.add(todayFood);
+                h.insertFood(todayFood);
+                System.out.println("La food "+h.getOneWithName(todayFood.getFoodName().toString()));
                 adapter.notifyItemInserted(todayFoods.size() - 1);
             }
         });
