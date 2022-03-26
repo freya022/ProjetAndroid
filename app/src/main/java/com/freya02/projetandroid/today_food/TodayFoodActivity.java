@@ -81,6 +81,7 @@ public class TodayFoodActivity extends AppCompatActivity {
                 TodayFood todayFood = new TodayFood(holder.imagePath, holder.name, holder.kcal);
                 todayFoods.add(todayFood);
                 h.insertFood(todayFood);
+                System.out.println("La food "+h.getOneWithName(todayFood.getFoodName().toString()));
                 adapter.notifyItemInserted(todayFoods.size() - 1);
             }
         });

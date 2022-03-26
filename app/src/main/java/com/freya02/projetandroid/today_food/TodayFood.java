@@ -35,4 +35,14 @@ public class TodayFood {
     public int getId() {
         return id;
     }
+
+    @Override
+    public String toString() {
+        return "TodayFood{" +
+                "id=" + id +
+                ", imagePath='" + imagePath + '\'' +
+                ", foodName='" + foodName + '\'' +
+                ", foodKcal=" + foodKcal +
+                '}';
+    }
 }

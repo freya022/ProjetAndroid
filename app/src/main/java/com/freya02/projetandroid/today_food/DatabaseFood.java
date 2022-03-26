@@ -10,12 +10,12 @@ import androidx.annotation.Nullable;
 
 public class DatabaseFood extends SQLiteOpenHelper {
     public DatabaseFood(@Nullable Context context) {
-        super(context, "databaseClient", null, 1);
+        super(context, "databaseFood", null, 1);
     }
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE Food(_id INTEGER PRIMARY KEY,nom TEXT,kcal INTEGER,photo TEXT)");
+        db.execSQL("CREATE TABLE Food(_id INTEGER PRIMARY KEY,photo TEXT,nom TEXT,kcal INTEGER)");
     }
 
     @Override
@@ -28,9 +28,9 @@ public class DatabaseFood extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues cv = new ContentValues();
+        cv.put("photo", u.getImagePath());
         cv.put("nom", u.getFoodName());
         cv.put("kcal", u.getFoodKcal());
-        cv.put("photo", u.getImagePath());
 
         db.insert("Food", null, cv);
     }
@@ -39,15 +39,15 @@ public class DatabaseFood extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues cv = new ContentValues();
+        cv.put("photo", u.getImagePath());
         cv.put("nom", u.getFoodName());
         cv.put("kcal", u.getFoodKcal());
-        cv.put("photo", u.getImagePath());
 
         db.update("Food", cv, "_id=?", new String[]{String.valueOf(u.getId())});
         db.close();
     }
 
-    public void deleteUtilisateur(int id) {
+    public void deleteFood(int id) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         db.delete("Food", "_id=?", new String[]{String.valueOf(id)});
@@ -64,7 +64,7 @@ public class DatabaseFood extends SQLiteOpenHelper {
 
     public TodayFood getOne(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = db.query("Food", new String[]{"_id", "nom", "kcal", "photo"}, "_id=?",
+        Cursor c = db.query("Food", new String[]{"_id", "photo","nom", "kcal" }, "_id=?",
                 new String[]{String.valueOf(id)}, null, null, null);
         c.moveToFirst();
         TodayFood u = new TodayFood(c.getInt(0), c.getString(1), c.getString(2), c.getInt(3));
@@ -74,7 +74,7 @@ public class DatabaseFood extends SQLiteOpenHelper {
 
     public TodayFood getOneWithName(String nom) {
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor c = db.query("Food", new String[]{"_id",  "nom", "kcal", "photo"}, "nom=?",
+        Cursor c = db.query("Food", new String[]{"_id",  "photo","nom", "kcal"}, "nom=?",
                 new String[]{nom}, null, null, null);
         if (c.getCount() != 0) {
             c.moveToFirst();

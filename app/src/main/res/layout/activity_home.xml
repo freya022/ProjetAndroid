@@ -59,11 +59,12 @@
 
     <Button
         android:id="@+id/button"
-        android:backgroundTint="@color/blue70"
         android:layout_width="242dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="250dp"
+        android:backgroundTint="@color/blue70"
+        android:onClick="onTodayFoodClicked"
         android:text="Mes repas du jour" />
 
     <Button
