@@ -15,10 +15,13 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.freya02.projetandroid.DistanceDatabase;
 import com.freya02.projetandroid.LocationService;
 import com.freya02.projetandroid.PermissionUtils;
 import com.freya02.projetandroid.other.Database;
 import com.freya02.projetandroid.other.Utilisateur;
+
+import java.util.Locale;
 
 public class MainActivity extends BaseActivity {
     private final Database database = new Database(this);
@@ -56,9 +59,11 @@ public class MainActivity extends BaseActivity {
 
             final TextView name = findViewById(R.id.nom2);
             final TextView prenom = findViewById(R.id.prenom2);
+            final TextView distanceView = findViewById(R.id.distanceTextView);
 
             name.setText(getIntent().getStringExtra("personne_nom"));
             prenom.setText(getIntent().getStringExtra("personne_prenom"));
+            distanceView.setText(String.format(Locale.getDefault(), "%.2f km", new DistanceDatabase(this).getTodayDistance()));
 
             tryStartService();
         }, () -> {
