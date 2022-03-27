@@ -86,14 +86,16 @@
         android:backgroundTint="@color/blue70"
         android:onClick="onAdvicesPageClicked"
         android:text="Mes conseils" />
+
     <Button
         android:id="@+id/button3"
-        android:backgroundTint="@color/blue70"
         android:layout_width="245dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="80dp"
         android:layout_marginTop="400dp"
-        android:text="Mes données personnelles" />
+        android:backgroundTint="@color/blue70"
+        android:text="Mes données personnelles"
+        android:onClick="onChangeInformation"/>
 
     <Button
         android:id="@+id/infoSurNous"

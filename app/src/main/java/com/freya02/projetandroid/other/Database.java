@@ -41,7 +41,7 @@ public class Database extends SQLiteOpenHelper {
         db.insert("Client", null, cv);
     }
 
-    public void updateUtilisateur(Utilisateur u) {
+    public void updateUtilisateur(Utilisateur u,String email) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues cv = new ContentValues();
@@ -49,13 +49,13 @@ public class Database extends SQLiteOpenHelper {
         cv.put("prenom", u.getPrenom());
         cv.put("email", u.getEmail());
         cv.put("mdp", u.getMdp());
-        cv.put("genre", u.getAge());
-        cv.put("age", u.getPoids());
-        cv.put("poids", u.getTaille());
-        cv.put("taille", u.getGenre());
+        cv.put("genre", u.getGenre());
+        cv.put("age", u.getAge());
+        cv.put("poids", u.getPoids());
+        cv.put("taille", u.getTaille());
         cv.put("locomotion", u.getLocomotion());
 
-        db.update("Client", cv, "_id=?", new String[]{String.valueOf(u.getId())});
+        db.update("Client", cv, "email=?", new String[]{String.valueOf(u.getEmail())});
         db.close();
     }
 

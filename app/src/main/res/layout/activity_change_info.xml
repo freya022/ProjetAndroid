@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChangeInfoActivity">
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="85dp"
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Changer vos informations"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="38dp" />
+
+    <TextView
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Informations"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="38dp" />
+
+    <TextView
+        android:layout_marginTop="150dp"
+        android:layout_marginLeft="220dp"
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nouvelles informations"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="38dp" />
+
+    <TextView
+        android:id="@+id/nomF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="200dp"
+        android:text="No"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="38dp" />
+    <EditText
+        android:id="@+id/newNom"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="200dp"
+        android:layout_marginTop="200dp"
+        android:hint="Votre"
+        android:inputType="text" />
+
+
+    <TextView
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/prenom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="38dp" />
+    <EditText
+        android:id="@+id/newPrenom"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:layout_marginLeft="200dp"
+        android:hint="Votre"
+        android:inputType="text" />
+
+    <TextView
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/genre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="38dp" />
+
+    <Spinner
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="200dp"
+        android:id="@+id/spinnerGenre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/genre"/>
+
+
+    <TextView
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="38dp" />
+    <EditText
+        android:id="@+id/newAge"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="350dp"
+        android:layout_marginLeft="200dp"
+        android:hint="Votre"
+        android:inputType="text" />
+
+
+    <TextView
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/poids"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="38dp" />
+    <EditText
+        android:id="@+id/newPoids"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="400dp"
+        android:layout_marginLeft="200dp"
+        android:hint="Votre"
+        android:inputType="text" />
+
+    <TextView
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/taille"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="38dp" />
+    <EditText
+        android:id="@+id/newTaille"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="200dp"
+        android:hint="Votre"
+        android:inputType="text" />
+
+
+    <TextView
+        android:layout_marginTop="500dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/loco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="88dp"
+        tools:layout_editor_absoluteY="38dp" />
+    <Spinner
+        android:layout_marginTop="500dp"
+        android:layout_marginLeft="200dp"
+        android:id="@+id/spinnerLoco"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/locomotion"/>
+
+    <Button
+        android:id="@+id/boutonValider"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="600dp"
+        android:backgroundTint="@color/blue70"
+        android:text="Valider" />
+
+</RelativeLayout>
