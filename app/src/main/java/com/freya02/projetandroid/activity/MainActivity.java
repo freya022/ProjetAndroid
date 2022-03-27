@@ -73,6 +73,12 @@ public class MainActivity extends BaseActivity {
         }, FOREGROUND_SERVICE, ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION, ACCESS_BACKGROUND_LOCATION, CAMERA);
     }
 
+    public void onChangeInformation(View v){
+        Intent intent = new Intent(this, ChangeInfoActivity.class);
+
+        startActivity(intent);
+    }
+
     public void onTodayFoodClicked(View v) {
         Intent intent = new Intent(this, TodayFoodActivity.class);
 

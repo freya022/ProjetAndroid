@@ -15,6 +15,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjetAndroid">
         <activity
+            android:name=".ChangeInfoActivity"
+            android:exported="false" />
+        <activity
             android:name=".AddFoodActivity"
             android:exported="true" />
         <activity
