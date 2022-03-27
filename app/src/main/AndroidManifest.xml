@@ -49,7 +49,7 @@
         </activity>
 
         <service
-            android:name=".LocationService"
+            android:name="com.freya02.projetandroid.LocationService"
             android:enabled="true" />
     </application>
 
