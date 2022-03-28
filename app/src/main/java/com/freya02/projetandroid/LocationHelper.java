@@ -22,7 +22,7 @@ public class LocationHelper {
         lm.requestLocationUpdates(
                 LocationManager.GPS_PROVIDER,
                 10000,
-                100,
+                0,
                 locationListener);
     }
 
